@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Roboto;
+    src:url(fonts/Roboto/Roboto-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src:url(fonts/Roboto/Roboto-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto_Mono;
+    src:url(fonts/Roboto_Mono/RobotoMono-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto_Mono;
+    src:url(fonts/Roboto_Mono/RobotoMono-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+#main{
+    margin: 30px;
+    padding: 10px;
+    border: 3px solid black;
+    font-family: Roboto_Mono, sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    background-color: #ffffff;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.unwrittenSpan {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.writtenCorrectSpan {
+    color: #66BB6A;
+    background-color: lightgrey;
+}
+
+.writtenWrongSpan {
+    color: #FF5252;
+    background-color: lightgrey;
+}
+
+.singleSpan {
+    border-radius: 5px;
+}
+
+.firstSpan {
+    border-radius: 5px 1px 1px 5px;
+}
+
+.lastSpan {
+    border-radius: 1px 5px 5px 1px;
+}
