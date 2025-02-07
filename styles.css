@@ -26,16 +26,72 @@
     font-style: normal;
 }
 
-#main{
-    margin: 30px;
+html {
+    padding: 30px
+}
+
+#main {
     padding: 10px;
     border: 3px solid black;
-    font-family: Roboto_Mono, sans-serif;
-    font-size: 30px;
-    font-weight: 100;
-    background-color: #ffffff;
     height: 300px;
     border-radius: 10px;
+    background-color: #ffffff;
+    line-height: 2;
+
+    font-family: Roboto_Mono, sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
+}
+#main * {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+#result {
+    padding: 10px;
+    border: 3px solid black;
+    width: 70%;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-left: 10px;
+    text-align: center;
+
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#startButton {
+    width: 30%;
+    height: 126px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #2196F3; /* Яркий синий */
+    border: 2px solid #1976D2; /* Темно-синяя обводка */
+    color: white; /* Белый текст */
+    padding: 10px 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+    background-color: #1976D2; /* Темнее при наведении */
+    border-color: #0D47A1; /* Еще темнее обводка */
+}
+
+button:active {
+    background-color: #0D47A1; /* Самый темный синий при нажатии */
+    border-color: #0D47A1;
 }
 
 .unwrittenSpan {
@@ -63,4 +119,11 @@
 
 .lastSpan {
     border-radius: 1px 5px 5px 1px;
+}
+
+* {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
 }

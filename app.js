@@ -1,20 +1,37 @@
 let mainDiv = document.getElementById("main");
 let text = 'just go on and faith will soon return';
-let counter = 0;
+let counter;
+
+let textNode;
 
 let startTime;
 let endTime;
 
-// adding text to div
-for (char of text) {
-    mainDiv.appendChild(getColorCharSpan(char));
+document.getElementById('startButton').addEventListener('click', startInput);
+
+function startInput() {
+    removeChildren(mainDiv);
+    counter = 0;
+    document.getElementById('controlBar').lastElementChild.textContent = '';
+
+    // adding text to div
+    for (char of text) {
+        mainDiv.appendChild(getColorCharSpan(char));
+    }
+
+    textNode = mainDiv.firstChild;
+
+    window.addEventListener("keydown", handleKeydown);
+
+    this.blur();
 }
 
-let textNode = document.getElementById('main').firstChild;
+function removeChildren(element) {
+    while(element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
 
-window.addEventListener("keydown", handleKeydown);
-
-// functions:
 function isValidKey(key) {
     let charCode = key.charCodeAt(0);
     console.log(charCode);
@@ -72,6 +89,11 @@ function handleKeydown(e) {
     if (e.key === 'Backspace') {
         counter--;
 
+        if (counter < 0) {
+            counter = 0;
+            return;
+        }
+
         textNode.previousElementSibling.classList.remove('writtenCorrectSpan');
         textNode.previousElementSibling.classList.remove('writtenWrongSpan');
         textNode.previousElementSibling.classList.add('unwrittenSpan');
@@ -109,7 +131,10 @@ function handleKeydown(e) {
 function endInput() {
     window.removeEventListener('keydown', handleKeydown);
     endTime = new Date().getTime();
-    alert(`Результат: ${(text.length / (endTime - startTime) * 1000).toFixed(1)} символов в секунду`);
+    document
+        .getElementById('controlBar')
+        .lastElementChild
+        .textContent = `${(text.length / (endTime - startTime) * 1000).toFixed(1)} cps`;
 }
 
 
